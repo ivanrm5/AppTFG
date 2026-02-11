@@ -44,3 +44,4 @@ public class LoginController {
         return "redirect:/home?username=" + usuario.getUsername();
     }
 }
+
