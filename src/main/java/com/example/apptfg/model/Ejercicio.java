@@ -1,34 +1,31 @@
 package com.example.apptfg.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import javax.annotation.processing.Generated;
+import jakarta.persistence.*;
 
 @Entity
-public class Usuario {
+public class Ejercicio {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
-    private String password;
-    private String email;
+    private String nombre;
+    private String musculoPrimario;
 
-    public Usuario(Long id, String username,String email, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
+    @ManyToOne
+    private Usuario usuario;
+
+    public Ejercicio(String nombre, String musculoPrimario, Usuario usuario) {
+        this.nombre = nombre;
+        this.musculoPrimario = musculoPrimario;
+        this.usuario = usuario;
     }
-    public Long getId() {return id;}
-    public void setId(Long id) {this.id = id;}
-    public String getUsername() {return username;}
-    public void setUsername(String username) {this.username = username;}
-    public String getPassword() {return password;}
-    public void setPassword(String password) {this.password = password;}
 
+    public Ejercicio() {}
+
+    public String  getNombre() {return nombre;}
+    public String  getMusculoPrimario() {return musculoPrimario;}
+    public Usuario getUsuario() {return usuario;}
 }
+
 

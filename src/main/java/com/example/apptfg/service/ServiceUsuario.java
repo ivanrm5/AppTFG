@@ -1,15 +1,15 @@
 package com.example.apptfg.service;
 
 import com.example.apptfg.model.Usuario;
-import com.example.apptfg.repository.RepositoryUsuario;
+import com.example.apptfg.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ServiceUsuario {
 
-    private final RepositoryUsuario repositoryUsuario;
+    private final UsuarioRepository repositoryUsuario;
 
-    public ServiceUsuario(RepositoryUsuario repositoryUsuario) {
+    public ServiceUsuario(UsuarioRepository repositoryUsuario) {
         this.repositoryUsuario = repositoryUsuario;
     }
 

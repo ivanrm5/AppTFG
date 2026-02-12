@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class RepositoryUsuario {
+public class UsuarioRepository {
 
     private List<Usuario> usuarios = new ArrayList<>();
 
-    public RepositoryUsuario() {
+    public UsuarioRepository() {
         usuarios.add(new Usuario("admin", "admin","usuario@gmail.com" ,true));
         usuarios.add(new Usuario("usuario", "usuario","admin@gmail.com",false));
     }
