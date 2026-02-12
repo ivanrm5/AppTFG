@@ -17,6 +17,11 @@ public class HomeController {
     }
 
     @GetMapping("/home")
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping("/home")
     public String home(
             @RequestParam(required = false) String username,
             Model model

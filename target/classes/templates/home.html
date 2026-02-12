@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Red Social Gym - Inicio</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
-<body class="center">
+<body>
 
-<div class="card">
-    <h1>Bienvenido</h1>
+<!-- NAVBAR SUPERIOR -->
+<header class="navbar">
+    <div class="logo">RedSocialGYM</div>
 
-    <p><strong>Usuario:</strong>
-        <span th:text="${usuario.username}"></span>
-    </p>
+    <nav>
+        <a th:href="@{/home}" class="active">Inicio</a>
+        <a th:href="@{/buscar}">Buscar</a>
+        <a th:href="@{/perfil}">Perfil</a>
+        <a th:href="@{/mensajes}">Mensajes</a>
+    </nav>
+</header>
 
-    <p><strong>Rol:</strong>
-        <span th:text="${usuario.admin} ? 'ADMIN' : 'USUARIO'"></span>
-    </p>
+<!-- CONTENIDO PRINCIPAL -->
+<div class="container">
 
-    <a class="btn"
-       th:href="@{'/auth/login'}">
-        Cerrar sesión
-    </a>
+    <h1>Entrenamiento</h1>
+
+    <button class="start-workout">
+        + Empezar Entrenamiento Vacío
+    </button>
+
+    <h2>Rutinas</h2>
+
+    <div class="rutinas-grid">
+
+        <a th:href="@{/rutina/crear}" class="card">
+            <div class="icon">📋</div>
+            <p>Nueva Rutina</p>
+        </a>
+
+        <a th:href="@{/rutina/explorar}" class="card">
+            <div class="icon">🔍</div>
+            <p>Explorar Rutinas</p>
+        </a>
+
+    </div>
+
 </div>
 
 </body>
 </html>
-
