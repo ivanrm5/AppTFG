@@ -20,13 +20,13 @@ public class LoginController {
         this.serviceUsuario = serviceUsuario;
     }
 
-    // 👉 Mostrar login
+    //Mostrar login
     @GetMapping("/login")
     public String mostrarLogin() {
         return "login";
     }
 
-    // 👉 Procesar login
+    //Procesar login
     @PostMapping("/login")
     public String procesarLogin(
             @RequestParam String username,
@@ -43,5 +43,26 @@ public class LoginController {
         // Pasamos el username como "estado"
         return "redirect:/home?username=" + usuario.getUsername();
     }
+
+    @GetMapping("/registro")
+    public String mostrarRegistro() {
+        return "registro";
+    }
+
+    @PostMapping("/registro")
+    public String procesarRegistro(@RequestParam String username,
+                                   @RequestParam String email,
+                                   @RequestParam String password,
+                                   Model model
+    ){
+        String error = serviceUsuario.registrar(username, email, password);
+
+        if (error != null) {
+            model.addAttribute("error", error);
+            return "registro";
+        }
+        return "redirect:/auth/login";
+    }
+
 }
 

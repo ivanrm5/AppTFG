@@ -24,4 +24,21 @@ public class ServiceUsuario {
     public Usuario buscarPorUsername(String username) {
         return repositoryUsuario.buscarPorUsername(username);
     }
+
+    public String registrar(String username, String email, String password) {
+
+        if (repositoryUsuario.existeUsername(username)) {
+            return "El nombre de usuario ya está en uso";
+        }
+
+        if (repositoryUsuario.existeEmail(email)) {
+            return "El correo ya está registrado";
+        }
+
+        Usuario nuevoUsuario = new Usuario(username, email, password, false);
+        repositoryUsuario.guardar(nuevoUsuario);
+
+        return null; // null = registro correcto
+    }
+
 }

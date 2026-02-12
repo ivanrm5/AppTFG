@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Login - Red Social Gym</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
-<body class="center">
+<body>
 
-<div class="card">
-    <h2>Iniciar sesión</h2>
+<div class="container">
+    <h2>Iniciar Sesión</h2>
 
     <form th:action="@{/auth/login}" method="post">
-        <div class="field">
+        <div class="form-group">
             <label>Usuario</label>
             <input type="text" name="username" required>
         </div>
 
-        <div class="field">
+        <div class="form-group">
             <label>Contraseña</label>
             <input type="password" name="password" required>
         </div>
@@ -24,15 +23,14 @@
         <button type="submit">Entrar</button>
     </form>
 
+    <!-- Mensaje de error -->
     <p class="error" th:if="${error}" th:text="${error}"></p>
 
-    <div class="info">
-        <p><strong>Usuarios de prueba:</strong></p>
-        <p>admin / admin</p>
-        <p>usuario / usuario</p>
+    <div class="link-section">
+        <p>¿No tienes cuenta?</p>
+        <a th:href="@{/auth/registro}">Crear cuenta</a>
     </div>
 </div>
 
 </body>
-
 </html>

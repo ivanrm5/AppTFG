@@ -1,77 +1,76 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    margin: 0;
-    background: #f2f2f2;
-}
-
-.center {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.card {
+.container {
     background: white;
     padding: 30px;
-    width: 320px;
-    border-radius: 8px;
+    border-radius: 10px;
+    width: 350px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.field {
+.form-group {
     margin-bottom: 15px;
 }
 
 label {
+    font-size: 14px;
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
 }
 
 input {
     width: 100%;
     padding: 8px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-button, .btn {
+button {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 4px;
-    background: #007bff;
+    background-color: #2c7be5;
     color: white;
-    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-    display: block;
-    text-align: center;
+    font-weight: bold;
 }
 
-button:hover, .btn:hover {
-    background: #0056b3;
+button:hover {
+    background-color: #1a5fd0;
 }
 
 .error {
     color: red;
-    text-align: center;
     margin-top: 10px;
+    text-align: center;
 }
 
-.info {
-    margin-top: 20px;
-    font-size: 0.9em;
+.success {
+    color: green;
+    margin-top: 10px;
     text-align: center;
-    color: #555;
+}
+
+.link-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.link-section a {
+    text-decoration: none;
+    color: #2c7be5;
+    font-weight: bold;
 }
